@@ -1,0 +1,53 @@
+.slide_ad {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    .titles {
+        p {
+            &:first-child,
+            &:last-child {
+                font-size: 3em;
+            }
+        }
+    }
+}
+
+.tranches {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 50px;
+    .tranche-wrapper {
+        display: flex;
+        align-items: center;
+        .departs {
+            .bar-container {
+                justify-content: flex-end;
+            }
+        }
+        .arrivees {
+            .bar-container {
+                .bar {
+                    background-color: #9733EE;
+                }
+            }
+        }
+        .bar-container {
+            width: 40vw;
+            display: flex;
+            align-items: center;
+            grid-gap: 10px;
+            .bar {
+                width: 0px;
+                height: 50px;
+                background-color: #DA22FF;
+                border-radius: 25px;
+                transition: 500ms ease-in-out;
+            }
+        }
+        .tranche {
+            padding: 15px 25px;
+            display: flex;
+            text-align: center;
+        }
+    }
+}

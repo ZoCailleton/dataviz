@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1366 769" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Plan-de-travail1" serif:id="Plan de travail1" transform="matrix(1,0,0,1,-0.986144,-0.845616)">
+        <rect x="0.986" y="0.846" width="1365.17" height="768.036" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="0.986" y="0.846" width="1365.17" height="768.036"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(-15.962,271.353,271.353,15.962,801.317,133.29)">
+                <g id="Layer-1" serif:id="Layer 1">
+                    <path id="layer3" d="M-0.314,-2.968L2.507,-2.802L2.212,2.215L-0.056,2.081C-0.156,1.908 0.031,1.655 0.102,1.568C0.129,1.535 0.145,1.496 0.147,1.454C0.152,1.306 0.028,1.154 -0.077,1.054C-0.142,0.991 -0.155,0.892 -0.109,0.814C0.067,0.519 -0.025,0.007 -0.05,-0.114C-0.054,-0.131 -0.06,-0.148 -0.068,-0.163C-0.246,-0.514 -0.351,-0.925 -0.41,-1.321L-0.314,-2.968Z" style="fill:url(#_Linear2);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,-1,0,-0.753113)"><stop offset="0" style="stop-color:rgb(239,175,98);stop-opacity:1"/><stop offset="0.97" style="stop-color:rgb(220,97,77);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(220,97,77);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>

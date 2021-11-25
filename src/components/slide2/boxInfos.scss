@@ -1,0 +1,15 @@
+.box-infos {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    ul {
+        li {
+            font-size: 14px;
+            color: #D8614A;
+        }
+    }
+}

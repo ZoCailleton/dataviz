@@ -1,0 +1,76 @@
+.slide {
+    &.s-4 {
+        align-items: flex-start;
+        flex-direction: column;
+        overflow: hidden;
+        .phrase {
+            width: 200vw;
+            transform: translateX(100vw);
+            font-size: 150px;
+        }
+    }
+    &.map {
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        .group {
+            margin-top: 10em;
+            opacity: 0.1;
+            &.active {
+                opacity: 1;
+            }
+        }
+        h3 {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        p {
+            margin-top: 0.5em;
+            font-size: 2em;
+        }
+        .part {
+            width: 50%;
+            overflow: hidden;
+            &:nth-child(1) {
+                padding: 400px 5% 5%;
+                box-sizing: border-box;
+            }
+            &:nth-child(2) {
+                position: sticky;
+                top: 0px;
+            }
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.marker {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.5em;
+    box-shadow: 0px 10px 50px 5px rgba(0, 0, 0, 0.15);
+    font-family: 'Century Gothic';
+    &::before {
+        content: '';
+        width: 30px;
+        height: 50px;
+        background-image: url('../../assets/pin.png');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        right: 25px;
+        top: -35px;
+        z-index: -1;
+    }
+}
