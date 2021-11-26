@@ -15,9 +15,9 @@
         &.province {
             &:hover {
                 img {
-                    @for $i from 1 through 6 {
+                    @for $i from 1 through 8 {
                         &:nth-child(#{$i}) {
-                            transform: translateX(-200+$i*50px);
+                            transform: translateX($i*50px);
                         }
                     }
                 }
@@ -28,7 +28,7 @@
                 img {
                     @for $i from 1 through 4 {
                         &:nth-child(#{$i}) {
-                            transform: translateX(-200+$i*50px);
+                            transform: translateX(-$i*50px);
                         }
                     }
                 }

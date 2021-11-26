@@ -1,4 +1,4 @@
-import { gsap, Power2 } from 'gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect } from 'react'
 
@@ -17,15 +17,7 @@ const Slide3 = ({ step }) => {
                 scrollTrigger: {
                     start: 'top 60%',
                     trigger: tranche,
-                    scrub: true,
-                    onEnter() {
-                        tranche.querySelector('.departs .bar').style.width = tranche.dataset.arrivees + 'px'
-                        tranche.querySelector('.arrivees .bar').style.width = tranche.dataset.arrivees + 'px'
-                    },
-                    onLeaveBack() {
-                        tranche.querySelector('.departs .bar').style.width = 0
-                        tranche.querySelector('.arrivees .bar').style.width = 0
-                    }
+                    scrub: true
                 }
             })
         })
@@ -38,13 +30,13 @@ const Slide3 = ({ step }) => {
                 <div className="departs">
                     <div className="bar-container">
                         <p>{departs}</p>
-                        <div className="bar" />
+                        <div style={{ width: departs * 0.02 }} className="bar" />
                     </div>
                 </div>
                 <div className="tranche">{tranche} - {tranche + 5} ans</div>
                 <div className="arrivees">
                     <div className="bar-container">
-                        <div className="bar" />
+                        <div style={{ width: arrivees * 0.02 }} className="bar" />
                         <p>{arrivees}</p>
                     </div>
                 </div>

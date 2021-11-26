@@ -159,7 +159,25 @@
             display: flex;
             grid-gap: 25px;
             .pie {
+                opacity: 0;
+                transform: scale(0);
                 text-align: center;
+                animation-name: pie;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                &:nth-child(2) {
+                    animation-delay: 100ms;
+                }
+                &:nth-child(3) {
+                    animation-delay: 200ms;
+                }
+                @keyframes pie {
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
                 .chart {
                     width: 150px;
                     height: 150px;
@@ -191,11 +209,14 @@
                 border-radius: 25px;
                 cursor: pointer;
                 box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.5);
-                &:nth-child(1) {
-                    transform: translate(-20vw, -20vh);
+                &.btn-1 {
+                    transform: translate(20vw, -20vh);
                 }
-                &:nth-child(2) {
-                    transform: translate(20vw, 20vh);
+                &.btn-2 {
+                    transform: translate(0, 0);
+                }
+                &.btn-3 {
+                    transform: translate(0vw, 25vh);
                 }
             }
         }
@@ -218,7 +239,7 @@
             }
             .quarter {
                 position: absolute;
-                opacity: 0;
+                opacity: 0.75;
                 &.q1 {
                     width: 45%;
                     transform: translate(25%, -20%);

@@ -10,7 +10,7 @@ const NavBottom = ({ fnStep, step }) => {
                 <a href="#s5" onClick={() => fnStep(5)} className={`step ${step >= 5 ? 'active' : ''}`} />
                 <a href="#s6" onClick={() => fnStep(6)} className={`step ${step >= 6 ? 'active' : ''}`} />
             </div>
-            <div className="cta">Suivant</div>
+            <div style={{ opacity: step === 6 ? 0.15 : 1 }} className="cta">Suivant</div>
         </nav>
     )
 }

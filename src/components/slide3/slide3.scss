@@ -19,6 +19,16 @@
     .tranche-wrapper {
         display: flex;
         align-items: center;
+        opacity: 0;
+        transition: 500ms;
+        &.active {
+            opacity: 1;
+            @for $i from 1 through 12 {
+                &:nth-child(#{$i}) {
+                    transition-delay: $i*50ms;
+                }
+            }
+        }
         .departs {
             .bar-container {
                 justify-content: flex-end;

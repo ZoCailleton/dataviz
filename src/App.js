@@ -14,14 +14,41 @@ import Slide5 from './components/slide5/Slide5'
 import Slide6 from './components/slide6/Slide6'
 import Slide7 from './components/slide7/Slide7'
 
+import logo from './assets/logo.svg'
+
+import sound from './assets/sound.png'
+import mute from './assets/mute.png'
+
+import ambiance from './assets/ambiance.mp3'
+import solomobillier from './assets/solomobillier.mp3'
+
 const App = () => {
 
   const [step, setStep] = useState(1)
+  const [audio, setAudio] = useState(false)
 
   useEffect(() => {
     
     const navigation = document.querySelector('.navigation')
     const header = document.querySelector('.header')
+
+    const audio = document.querySelector('.main-audio')
+    const solomobillier = document.querySelector('.audio-hugo')
+
+    document.querySelector('.part.map').addEventListener('click', () => {
+      solomobillier.play()
+    })
+
+    document.querySelector('.btn-start').addEventListener('click', () => {
+      audio.play()
+      setAudio(false)
+    })
+
+    document.querySelector('.audio_off').addEventListener('click', () => {
+      audio.pause()
+      solomobillier.pause()
+      setAudio(true)
+    })
 
     document.addEventListener('scroll', () => {
 
@@ -35,18 +62,28 @@ const App = () => {
         header.classList.remove('active')
       }
       
-      if(scroll > 0 && scroll < 800) {
+      if(scroll > 800 && scroll < 1600) {
         setStep(1)
-      } else if(scroll > 800 && scroll < 1600) {
+      } else if(scroll > 1600 && scroll < 2400) {
         setStep(2)
       } else if(scroll > 2400 & scroll < 3000) {
         setStep(3)
       } else if(scroll > 3800 & scroll < 4600) {
         setStep(4)
-      } else if(scroll > 5400 & scroll < 6200) {
+      } else if(scroll > 8000 & scroll < 12000) {
         setStep(5)
-      } else if(scroll > 7000 & scroll < 7800) {
+      } else if(scroll > 12000) {
         setStep(6)
+      }
+
+      if(scroll > 5000) {
+        for(let tranche of document.querySelectorAll('.tranche-wrapper')) {
+          tranche.classList.add('active')
+        }
+      } else {
+        for(let tranche of document.querySelectorAll('.tranche-wrapper')) {
+          tranche.classList.remove('active')
+        }
       }
 
     })
@@ -98,17 +135,37 @@ const App = () => {
 
   return (
     <div className="wrapper">
+      <audio
+        className="main-audio hidden"
+        controls
+        src={ambiance}>
+            Your browser does not support the
+            <code>audio</code> element.
+      </audio>
+      <audio
+        className="audio-hugo hidden"
+        controls
+        src={solomobillier}>
+            Your browser does not support the
+            <code>audio</code> element.
+      </audio>
       <nav className="header">
-        <div className="butler">Roads</div>
+        <div>
+          <img className="h-16" src={logo} alt="Roads" />
+        </div>
         <div className="title overflow-hidden">
           <ul style={{ transform: `translateY(-${(step-1)*(100/5)}%)` }}>
             <li>Le profil de Paris</li>
             <li>Paris plus cher que la province</li>
-            <li>Le profil des parisiens qui partent</li>
-            <li>Le profil des parisiens qui partent</li>
+            <li>Les différentes population de Paris</li>
+            <li>Départs / Arrivées</li>
+            <li>Où vont les parisiens ? Carte</li>
+            <li>Où vont les parisiens ?</li>
           </ul>
         </div>
-        <div className="w-12 h-12 bg-black rounded-full"></div>
+        <div className="w-12 h-12 border-2 border-black rounded-full flex justify-center items-center">
+          <img className="h-4 audio_off" src={audio ? mute : sound} alt="" />
+        </div>
       </nav>
       <NavBottom step={step} fnStep={e => setStep(e)} />
       <Slide1 fnStep={() => setStep(2)} step={step} />

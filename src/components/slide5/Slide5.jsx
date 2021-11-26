@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ReactMapboxGl, { Marker, Layer, Feature } from "react-mapbox-gl";
+import ReactMapboxGl, { Marker } from "react-mapbox-gl";
 
 import './Slide5.scss'
 
@@ -32,7 +32,7 @@ const Slide5 = ({ step_gl }) => {
     useEffect(() => {
 
         if(step === 1) {
-            setZoom([12])
+            setZoom([11])
             setCenter(prev => {
                 return {...center, x: 2.3522219, y: 48.856614}
             })
@@ -78,7 +78,6 @@ const Slide5 = ({ step_gl }) => {
                 start: 'top top',
                 end: 'bottom top',
                 scrub: true,
-                markers: true,
                 onUpdate: function(self) {
                     let progress = Math.round(self.progress * 100)
                     if(progress < 20) {
@@ -111,16 +110,41 @@ const Slide5 = ({ step_gl }) => {
                     </div>
                     <div className={`group province ${step === 3 ? 'active' : ''}`}>
                         <h3>Province</h3>
-                        <p className="mb-10">Le plus important est de se sentir bien chez soi. Comme dirait le chanteur Orelsan : “Après avoir fait le tour du monde, tout ce qu’on veut c’est être à la maison”, mais parfois il est possible que les Parisiens ressentent le besoin de partir hors d’Ile-de-France.</p>
+                        <p className="mb-10">En province, la ville d'Evreux arrive en tête des villes les plus prisées par les parisiens. Les villes de Nice, Biarritz et Anglet suivent. Rennes vient compléter le top 5.</p>
                     </div>
                 </div>
-                <div className="part relative">
+                <div className="part relative map">
                     <div className="w-full h-full absolute left-0 top-0 z-10" />
                     <Map flyToOptions={{ speed: 0.5 }} zoom={zoom} containerStyle={{ height: '100vh' }} style={{ height: 500 }} center={[center.x, center.y]} style="mapbox://styles/zocailleton/ckwc3vwk85bkq14utqb4jlqhy">
+                        {step === 1 && <Marker
+                            coordinates={[2.288340, 48.894340]}
+                            anchor="bottom">
+                            <div className="marker marker-idf">1. Levallois-Perret</div>
+                        </Marker>}
+                        {step === 1 && <Marker
+                            coordinates={[2.270000, 48.823898]}
+                            anchor="bottom">
+                            <div className="marker marker-idf">2. Issy-les-Moulineaux</div>
+                        </Marker>}
+                        {step === 1 && <Marker
+                            coordinates={[2.253100, 48.897800]}
+                            anchor="bottom">
+                            <div className="marker marker-idf">3. Courbevoie</div>
+                        </Marker>}
+                        {step === 1 && <Marker
+                            coordinates={[2.436900, 48.858311]}
+                            anchor="bottom">
+                            <div className="marker marker-idf">4. Montreuil</div>
+                        </Marker>}
+                        {step === 1 && <Marker
+                            coordinates={[2.243230, 48.833832]}
+                            anchor="bottom">
+                            <div className="marker marker-idf">5. Boulogne-Billancourt</div>
+                        </Marker>}
                         {step === 2 && <Marker
                             coordinates={[1.829079, 48.643868]}
                             anchor="bottom">
-                            <div className="marker marker-idf">1. Rambouillet</div>
+                            <div className="marker marker-idf ramb">1. Rambouillet</div>
                         </Marker>}
                         {step === 2 && <Marker
                             coordinates={[2.701620, 48.404676]}
@@ -170,6 +194,7 @@ const Slide5 = ({ step_gl }) => {
                     </Map>
                 </div>
             </div>
+            <p className="paragraphe center">Depuis le début de la crise sanitaire, de nombreux Parisiens souhaitent s’éloigner de la Ville Lumière. En effet, selon une étude Pretto basée sur 47 000 simulations d’achat immobilier réalisées par des Parisiens entre janvier 2019 et mai 2021, les recherches de résidences principales en Province et en grande couronne ont respectivement augmenté de 77 % et 25 %.</p>
         </div>
     )
 }

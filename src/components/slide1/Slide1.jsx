@@ -83,8 +83,8 @@ const Slide1 = ({ fnStep, step }) => {
                     <img className="absolute" src={right1} alt="" />
                 </div>
             </div>
-            <h1 className="heading z-10">Immobilier : capitale <span>ou province ?</span></h1>
-            <div onClick={fnStep} className="btn-start mt-10 z-10">Start the experience</div>
+            <h1 className="heading z-10">Immobilier : province <span>ou capitale ?</span></h1>
+            <a href="#s2" onClick={fnStep} className="btn-start mt-10 z-10">Commencer l'experience</a>
         </div>
     )
 }

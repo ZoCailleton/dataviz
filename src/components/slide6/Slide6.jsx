@@ -50,8 +50,7 @@ const Slide6 = ({ step }) => {
                 pin: '.wrapper-slide.s-6',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true,
-                markers: true
+                scrub: true
             }
         })
 
@@ -61,9 +60,10 @@ const Slide6 = ({ step }) => {
         <div id="s6" className="wrapper-slide s-6">
             <div className="inner flex">
                 <div className="slide">
-                    <p>FIN</p>
+                    <p style={{ lineHeight: '1.35em' }} className="max-w-5xl text-4xl">Paris attire des touristes toujours plus nombreux. Il faut bien le reconnaître la ville lumière abrite de nombreux centres culturels. Elle vit et danse au rythme de l’acool et de ses nuits folles. Malheureusement la réalité est tout autre, les nuits parisennes ne peuvent nous éblouirent au point d’oublier une lourde contrepartie ! Effectivement sous le ciel de paris les prix s’envolent ! De l’immobilier au coût de la vie, les espaces de plus en plus réduits quand rien n’est trop grand Paris. Les parisiens la quittent, s’en vont vers les villes et les regions voisines, là où l’air est respirable, là où les prix sont moins élevés.</p>
                 </div>
                 <div className="slide flex-col">
+                    <p className="text-xl mb-16 underline">Pourcentage d'augmentation des recherches de logement par les parisiens :</p>
                     {tranche === 'idf' && <div className="tranche idf">
                         {communes_idf.map((item, i) => {
                             return <Ville key={i} ville={item.ville} recherches={item.recherches} />

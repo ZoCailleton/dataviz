@@ -8,6 +8,10 @@
   src: url('./fonts/century-gothic/GOTHICB0.TTF');
 }
 
+.butler {
+  font-family: 'Butler';
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -123,6 +127,9 @@ h3 {
   align-items: center;
   top: 0;
   transform: translateY(-100px);
+  > div:nth-child(1) {
+    transform: translateY(5px);
+  }
   .title {
     height: 100%;
     ul {
@@ -151,10 +158,6 @@ h3 {
     border-radius: 35px;
     color: #fff;
     cursor: pointer;
-    &:first-child {
-      background-color: #fff;
-      color: #000;
-    }
   }
   .inner {
     width: 100%;

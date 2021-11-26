@@ -33,9 +33,42 @@
         .bar {
             width: 0px;
             height: 50px;
-            background-color: #F42E78;
             border-radius: 25px;
             transition: 500ms;
+        }
+        &.idf {
+            .chart:nth-child(1) .bar {
+                background-color: #9733EE;
+            }
+            .chart:nth-child(2) .bar {
+                background-color: #DA22FF;
+            }
+            .chart:nth-child(3) .bar {
+                background-color: #C17AFC;
+            }
+            .chart:nth-child(4) .bar {
+                background-color: #7E43AA;
+            }
+            .chart:nth-child(5) .bar {
+                background-color: #472461;
+            }
+        }
+        &.province {
+            .chart:nth-child(1) .bar {
+                background-color: #97294F;
+            }
+            .chart:nth-child(2) .bar {
+                background-color: #CF4264;
+            }
+            .chart:nth-child(3) .bar {
+                background-color: #F42E78;
+            }
+            .chart:nth-child(4) .bar {
+                background-color: #E07A5D;
+            }
+            .chart:nth-child(5) .bar {
+                background-color: #EFC164;
+            }
         }
     }
 }
